@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1629963_eswbtkcdre.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="show-login-btn">
+            <i class="iconfont icon-jinru"></i>
+            Show Login Form
+    </div>
+    <div class="login-box">
+        <div class="hide-login-btn">
+            <i class="iconfont icon-quxiao"></i>
+        </div>
+        <form  class="login-form" action="index.html" method="post">
+            <h1>Welcome</h1>
+            <input class="txtb" type="text" name="" placeholder="Username">
+            <input class="txtb" type="password" name="" placeholder="Password">
+            <input class="login-btn" type="submit" name="" value="Login">
+        </form>
+    </div>
+    <script>
+        let $login_box = $(".login-box");
+        console.log('1');
+        $(".show-login-btn").on('click',function(){
+            console.log(2);
+            $login_box.toggleClass("showed");
+        })
+        $(".hide-login-btn").on('click',function(){
+            console.log('3');
+            $login_box.toggleClass("showed");
+        })
+    </script>
+</body>
+</html>
