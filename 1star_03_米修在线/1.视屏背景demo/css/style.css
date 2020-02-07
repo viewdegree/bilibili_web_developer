@@ -1,0 +1,78 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.v-header{
+    height: 100vh;
+    display: flex;      /*display:flex去掉文字就显示不出来了,flex可以让子层级不受position的影响*/
+    align-items: center;
+    color: #fff;
+}
+.container{
+    max-width: 960px;   /*为了不让盒子的子元素宽度设置为100%显得太大,所以限制盒子的宽度*/
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: auto;
+    text-align: center;
+}
+.fullscreen-video-wrap{
+    position: absolute; /*之所以是全屏是一位定位的关系,container没有定位,它向上找找到浏览器了*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.fullscreen-video-wrap video{
+    min-width: 100%;        /*不能小于浏览器的宽度*/
+    min-height: 100%;
+}
+.header-overlay{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #225470;
+    z-index: 1;
+    opacity: 0.3;
+}
+.header-content{
+    z-index: 2;
+}
+.header-content h1{
+    font-size: 4rem;
+    margin-bottom: 0;
+}
+.header-content p{
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+.btn{
+    background: #34b3a0;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    text-decoration: none;
+}
+.section{
+    padding: 1rem 0;
+}
+.section-b{
+    background: #333;
+    color: #fff;
+}
+@media (max-width: 960px){  /*缩小的时候调整边距*/
+    .container{
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}
