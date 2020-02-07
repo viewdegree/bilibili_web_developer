@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.login-box{
+    position: absolute;
+    top: 0;
+    left: 0; 
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(#fff4,#fff4),url("../images/beach.jpg") ; 
+    background-size: cover;
+    background-position: center;
+    transition: background .4s;
+}
+.form-box{
+    position: relative;
+    width: 380px;
+    height: 480px;
+    margin: 6% auto;
+    background: #fff;
+    padding: 5px;
+    /* overflow: hidden; */
+}
+.button-box{
+    position: relative;
+    width: 220px;
+    margin: 35px auto;
+    box-shadow: 0 0 20px 9px #ff61241f;
+    border-radius: 30px;
+}
+.toggle-btn{
+    position: relative;
+    padding: 10px 30px;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+#btn{   /*颜色遮罩层*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right,#ff105f,#ffad06);
+    border-radius: 30px;
+    transition: .5px;
+}
+.input-group{
+    position: absolute;
+    width: 280px;
+    top: 50%;
+    transform: translateY(-50%);     /* 50%为自身尺寸的一半 */
+    transition:transform .4s;
+}
+.input-field{
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border: 0;
+    border-bottom: 1px solid #999; 
+    outline: none;
+    background: transparent;
+}
+.check-remember{
+    margin: 30px 0;
+}
+.check-box{
+    margin-right: 10px;
+}
+.check-box+span{
+    position: absolute;
+    color: #777;
+    font-size: 12px;
+}
+.submit-btn{
+    display: block;
+    width: 85%;
+    padding: 10px 30px;
+    margin: auto;
+    background: linear-gradient(to right,#ff105f,#ffad06);
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.login{
+    visibility: hidden;
+    left: -100%; 
+}
+.register{
+    visibility: hidden;
+    right: -100%; 
+}
+.center{
+    visibility: visible;
+    left: 50%; 
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

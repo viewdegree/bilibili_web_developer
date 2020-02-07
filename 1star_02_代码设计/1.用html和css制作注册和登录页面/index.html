@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="login-box">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button id="login-btn" class="toggle-btn" type="button" >Log in</button>
+                <button id="register-btn" class="toggle-btn" type="button" >Register</button>
+            </div>
+            <form id="login" class="input-group center" action="">
+                <input class="input-field" type="text" placeholder="User Id" required>
+                <input class="input-field" type="password" placeholder="User Password" required>
+                <p class="check-remember">
+                    <input class="check-box" type="checkbox"><span>Remember Password</span>
+                </p>
+                <button class="submit-btn" type="submit">Log in</button>
+            </form>
+            <form id="register" class="input-group register" action="">
+                <input class="input-field" type="text" placeholder="User Id" required>
+                <input class="input-field" type="email" placeholder="Email Id" required>
+                <input class="input-field" type="password" placeholder="Enter Password" required>
+                <p class="check-remember">
+                    <input class="check-box" type="checkbox"><span>I agree to the terms&conditions</span>
+                </p>
+                <button class="submit-btn" type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        let $login = $("#login");
+        let $register = $("#register");
+        let $login_btn = $("#login-btn");
+        let $register_btn = $("#register-btn");
+        let $btn = $("#btn");
+        $register_btn.on('click',function(){
+            $login.removeClass("center");
+            $register.removeClass("register");
+            $login.addClass("login");
+            $register.addClass("center")
+            $btn.css("left","110px");
+        })
+        $login_btn.on('click',function(){
+            $login.removeClass("login");
+            $register.removeClass("center");
+            $login.addClass("center");
+            $register.addClass("register")
+            $btn.css("left","0");
+        })
+    </script>
+</body>
+</html>
