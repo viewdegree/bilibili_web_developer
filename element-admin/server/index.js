@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-02-22 09:20:33
- * @LastEditTime: 2020-02-22 11:33:15
+ * @LastEditTime: 2020-02-22 11:45:57
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \element-admin\server\index.js
@@ -41,7 +41,7 @@ app.get('/api/articles',async(req,res)=>{
 })
 //删除文章
 app.delete('/api/articles/:id',async(req,res)=>{
-    await Article.findByIdAndDelete(req.param.id)
+    await Article.findByIdAndDelete(req.params.id)
     res.send({
         status: true
     })
