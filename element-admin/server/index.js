@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-02-22 09:20:33
- * @LastEditTime: 2020-02-22 11:45:57
+ * @LastEditTime: 2020-02-22 12:19:59
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \element-admin\server\index.js
@@ -17,7 +17,8 @@ app.use(express.json())
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/element-admin',{
     useNewUrlParser:true,
-    useFindAndModify:true,
+    //避免使用findByIdAndUpdate出现警告
+    useFindAndModify:false,
     useUnifiedTopology:true
 })
 const Article = mongoose.model('Article', new mongoose.Schema({
@@ -45,6 +46,16 @@ app.delete('/api/articles/:id',async(req,res)=>{
     res.send({
         status: true
     })
+})
+//文章详情
+app.get('/api/articles/:id',async (req,res)=>{
+    const article = await Article.findById(req.params.id);
+    res.send(article)    
+})
+//修改文章,put表示覆盖性的修改
+app.put('/api/articles/:id',async (req,res)=>{
+    const article = await Article.findByIdAndUpdate(req.params.id,req.body);
+    res.send(article)    
 })
 
 app.listen(3001,()=>{ 

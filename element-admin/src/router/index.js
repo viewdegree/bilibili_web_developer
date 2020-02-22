@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-02-22 07:32:39
- * @LastEditTime: 2020-02-22 08:23:40
+ * @LastEditTime: 2020-02-22 11:57:46
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \element-admin\src\router\index.js
@@ -10,7 +10,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import CreateAriticle from '../views/CreateArticle.vue'
 import ListAriticle from '../views/ListArticle.vue'
-
+import EditArticle from '../views/EditArticle.vue'
 
 Vue.use(VueRouter)
 
@@ -33,6 +33,12 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     // component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
     component: CreateAriticle
+  },
+  {
+    //动态匹配
+    path: '/articles/:id/edit',
+    name: 'edit-article',
+    component: EditArticle
   }
 ]
 

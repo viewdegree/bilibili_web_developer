@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-02-22 08:12:40
- * @LastEditTime: 2020-02-22 11:52:11
+ * @LastEditTime: 2020-02-22 12:02:35
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \element-admin\src\views\ListArticle.vue
@@ -40,8 +40,9 @@ export default {
           this.articles = res.data
         })
       },
-      edit(){
-
+      edit(id){
+        //路由前面必须有斜杠
+        this.$router.push(`/articles/${id}/edit`)
       },
       remove(id){
         this.$http.delete(`articles/${id}`).then(()=>{
