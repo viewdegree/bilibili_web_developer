@@ -1,13 +1,14 @@
 <!--
  * @Author: your name
  * @Date: 2020-02-22 08:12:40
- * @LastEditTime: 2020-02-22 08:26:34
+ * @LastEditTime: 2020-02-22 08:34:09
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \element-admin\src\views\ListArticle.vue
  -->
 <template>
     <div>
+      <!-- data是指数据 -->
         <el-table :data="tableData">
           <el-table-column prop="date" label="日期" width="140">
           </el-table-column>
