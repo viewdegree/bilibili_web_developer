@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-02-22 09:20:33
- * @LastEditTime: 2020-02-22 11:00:03
+ * @LastEditTime: 2020-02-22 11:33:15
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \element-admin\server\index.js
@@ -34,7 +34,18 @@ app.post('/api/articles', async(req, res)=>{
     const article = await Article.create(req.body);
     res.send(article)
 })
-
+//文章列表
+app.get('/api/articles',async(req,res)=>{
+    const articles = await Article.find();
+    res.send(articles)    
+})
+//删除文章
+app.delete('/api/articles/:id',async(req,res)=>{
+    await Article.findByIdAndDelete(req.param.id)
+    res.send({
+        status: true
+    })
+})
 
 app.listen(3001,()=>{ 
     console.log('http://localhost:3001/');
