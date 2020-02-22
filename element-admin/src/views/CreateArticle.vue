@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-02-22 08:12:54
- * @LastEditTime: 2020-02-22 11:02:48
+ * @LastEditTime: 2020-02-22 11:09:45
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \element-admin\src\views\CreateArticle.vue
@@ -35,6 +35,13 @@
         this.$http.post('articles',this.article).then(res=>{
             //服务器返回给前端的数据
             console.log(res.data);
+            //弹出消息提示
+            this.$message({
+                message: '文章创建成功',
+                type: 'success'
+            });
+            //跳转到页面
+            this.$router.push('/articles/index')
         })
         console.log(this.article);
       }
